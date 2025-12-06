@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/add_home_24"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_ajout_etudiant"
+            android:icon="@drawable/rounded_add_box_24"
+            android:title="@string/menu_ajout" />
+        <item
+            android:id="@+id/nav_liste_etudiants"
+            android:icon="@drawable/chat_info_24"
+            android:title="@string/menu_liste" />
+    </group>
+</menu>

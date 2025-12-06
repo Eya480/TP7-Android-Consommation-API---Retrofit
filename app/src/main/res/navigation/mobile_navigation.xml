@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.isetr.menufragapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_ajout_etudiant"
+        android:name="com.isetr.menufragapp.ui.ajout.AjoutEtudiantFragment"
+        android:label="@string/menu_ajout"
+        tools:layout="@layout/fragment_ajout_etudiant">
+
+        <action
+            android:id="@+id/action_nav_ajout_etudiant_to_nav_liste_etudiants"
+            app:destination="@id/nav_liste_etudiants" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_liste_etudiants"
+        android:name="com.isetr.menufragapp.ui.liste.ListeEtudiantsFragment"
+        android:label="@string/menu_liste"
+        tools:layout="@layout/fragment_liste_etudiants">
+
+        <!-- Action pour aller vers les détails -->
+        <action
+            android:id="@+id/action_nav_liste_etudiants_to_detailsEtudiantFragment"
+            app:destination="@id/detailsEtudiantFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsEtudiantFragment"
+        android:name="com.isetr.menufragapp.ui.detail.DetailsEtudiantFragment"
+        android:label="Détails Étudiant"
+        tools:layout="@layout/fragment_details_etudiant">
+
+        <argument
+            android:name="cin"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_detailsEtudiantFragment_to_nav_liste_etudiants"
+            app:destination="@id/nav_liste_etudiants"
+            app:popUpTo="@id/nav_liste_etudiants"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+</navigation>
